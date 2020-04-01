@@ -75,7 +75,7 @@ if phishing_url.startswith('http') == True:
 elif phishing_url == 'random':
     pass
 else:
-    print("Type a valid optipn (URL, or random\n")
+    print("Type a valid option (URL, or random\n")
     print("closing....")
     sys.exit(1)
 #data array
@@ -86,11 +86,11 @@ data = {
 'phishing_url' : phishing_url,
 'template' :template
 }
-print("**** Sending data to API to generate report.... *****")
+print("**** Sending data to API ****")
 response = get_sample(url, headers, data)
+print("*** Generating Report ****")
 download_url = response['download_url']
 print("**** You can access the sample malicious document on ****\n",download_url)
-#!/usr/bin/env python
 save = input("\n[*] Press Y/y to download the file or any key to exit\n")
 if save == "Y":
     download(download_url)
